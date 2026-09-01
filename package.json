@@ -1,0 +1,33 @@
+{
+  "name": "ai-voice-assistant",
+  "version": "1.0.0",
+  "description": "A complete AI voice-controlled assistant that can open websites, write text, and perform various tasks using Web Speech API",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "start-node": "npx http-server -p 8000",
+    "build": "echo 'No build needed for this project'",
+    "test": "echo 'Run tests here'"
+  },
+  "keywords": [
+    "voice-assistant",
+    "speech-recognition",
+    "ai",
+    "web-api",
+    "javascript",
+    "voice-control",
+    "text-to-speech"
+  ],
+  "author": "Madan Mishra <mishramadan845@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Madanmishra45/ai-voice-assistant.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Madanmishra45/ai-voice-assistant/issues"
+  },
+  "homepage": "https://github.com/Madanmishra45/ai-voice-assistant#readme",
+  "devDependencies": {},
+  "dependencies": {}
+}
