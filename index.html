@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice Assistant - Smart Command Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-robot"></i>
+                <h2>AI Assistant</h2>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active" data-section="home">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="#" class="nav-item" data-section="commands">
+                    <i class="fas fa-book"></i> Commands
+                </a>
+                <a href="#" class="nav-item" data-section="history">
+                    <i class="fas fa-history"></i> History
+                </a>
+                <a href="#" class="nav-item" data-section="settings">
+                    <i class="fas fa-cog"></i> Settings
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <h1>🎤 AI Voice Assistant</h1>
+                <p>Control your digital world with your voice</p>
+            </header>
+
+            <!-- Home Section -->
+            <section id="home" class="section active">
+                <div class="voice-control-panel">
+                    <div class="status-indicator">
+                        <span id="status" class="status-dot"></span>
+                        <span id="statusText">Ready to listen...</span>
+                    </div>
+
+                    <!-- Large Voice Button -->
+                    <button class="voice-button-large" id="voiceBtn">
+                        <i class="fas fa-microphone"></i>
+                        <span>Click to Speak</span>
+                    </button>
+
+                    <!-- Text Input Fallback -->
+                    <div class="text-input-section">
+                        <input 
+                            type="text" 
+                            id="textInput" 
+                            class="text-input" 
+                            placeholder="Or type your command here..."
+                            autocomplete="off"
+                        >
+                        <button id="sendBtn" class="send-button">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+
+                    <!-- Microphone Permission -->
+                    <div id="permissionAlert" class="alert alert-info" style="display: none;">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Please allow microphone access to use voice commands</span>
+                    </div>
+                </div>
+
+                <!-- Response Display -->
+                <div class="response-section">
+                    <div class="response-box">
+                        <div class="response-header">
+                            <i class="fas fa-brain"></i>
+                            Assistant Response
+                        </div>
+                        <div id="response" class="response-content">
+                            👋 Hello! I'm your AI Assistant. Say "open google" or "write hello world" to get started!
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Commands -->
+                <div class="quick-commands">
+                    <h3><i class="fas fa-bolt"></i> Quick Commands</h3>
+                    <div class="commands-grid">
+                        <button class="quick-cmd-btn" data-command="open google">
+                            <i class="fas fa-search"></i> Open Google
+                        </button>
+                        <button class="quick-cmd-btn" data-command="open youtube">
+                            <i class="fas fa-video"></i> Open YouTube
+                        </button>
+                        <button class="quick-cmd-btn" data-command="open github">
+                            <i class="fas fa-code-branch"></i> Open GitHub
+                        </button>
+                        <button class="quick-cmd-btn" data-command="what time is it">
+                            <i class="fas fa-clock"></i> Tell Time
+                        </button>
+                        <button class="quick-cmd-btn" data-command="open calculator">
+                            <i class="fas fa-calculator"></i> Calculator
+                        </button>
+                        <button class="quick-cmd-btn" data-command="weather today">
+                            <i class="fas fa-cloud"></i> Weather
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Commands Section -->
+            <section id="commands" class="section">
+                <div class="commands-reference">
+                    <h2>Available Commands</h2>
+                    <div class="command-list">
+                        <div class="command-card">
+                            <div class="cmd-title">📱 Open Websites</div>
+                            <div class="cmd-examples">
+                                <p>💬 "open google"</p>
+                                <p>💬 "open youtube"</p>
+                                <p>💬 "open github"</p>
+                                <p>💬 "open [any website name]"</p>
+                            </div>
+                        </div>
+
+                        <div class="command-card">
+                            <div class="cmd-title">✍️ Write & Type</div>
+                            <div class="cmd-examples">
+                                <p>💬 "write hello world"</p>
+                                <p>💬 "type my name is john"</p>
+                                <p>💬 "write a paragraph"</p>
+                            </div>
+                        </div>
+
+                        <div class="command-card">
+                            <div class="cmd-title">⏰ Time & Date</div>
+                            <div class="cmd-examples">
+                                <p>💬 "what time is it"</p>
+                                <p>💬 "what is today's date"</p>
+                                <p>💬 "tell me the time"</p>
+                            </div>
+                        </div>
+
+                        <div class="command-card">
+                            <div class="cmd-title">🔧 Utilities</div>
+                            <div class="cmd-examples">
+                                <p>💬 "open calculator"</p>
+                                <p>💬 "search [query]"</p>
+                                <p>💬 "weather today"</p>
+                            </div>
+                        </div>
+
+                        <div class="command-card">
+                            <div class="cmd-title">💬 Conversation</div>
+                            <div class="cmd-examples">
+                                <p>💬 "hello"</p>
+                                <p>💬 "how are you"</p>
+                                <p>💬 "tell me a joke"</p>
+                            </div>
+                        </div>
+
+                        <div class="command-card">
+                            <div class="cmd-title">🎵 Media</div>
+                            <div class="cmd-examples">
+                                <p>💬 "open spotify"</p>
+                                <p>💬 "open netflix"</p>
+                                <p>💬 "open twitch"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- History Section -->
+            <section id="history" class="section">
+                <div class="history-panel">
+                    <div class="history-header">
+                        <h2>Command History</h2>
+                        <button id="clearHistory" class="btn-clear">
+                            <i class="fas fa-trash"></i> Clear
+                        </button>
+                    </div>
+                    <div id="historyList" class="history-list">
+                        <p class="empty-message">No commands yet. Start by saying something!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="section">
+                <div class="settings-panel">
+                    <h2>Settings</h2>
+                    
+                    <div class="setting-group">
+                        <label>
+                            <span>Voice Volume</span>
+                            <input type="range" id="volumeControl" min="0" max="100" value="80">
+                            <span id="volumeValue">80%</span>
+                        </label>
+                    </div>
+
+                    <div class="setting-group">
+                        <label>
+                            <span>Speech Rate</span>
+                            <input type="range" id="rateControl" min="0.5" max="2" step="0.1" value="1">
+                            <span id="rateValue">1x</span>
+                        </label>
+                    </div>
+
+                    <div class="setting-group">
+                        <label>
+                            <span>Language</span>
+                            <select id="languageSelect">
+                                <option value="en-US">English (US)</option>
+                                <option value="en-GB">English (UK)</option>
+                                <option value="es-ES">Spanish</option>
+                                <option value="fr-FR">French</option>
+                                <option value="de-DE">German</option>
+                                <option value="it-IT">Italian</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="setting-group">
+                        <label>
+                            <input type="checkbox" id="autoSpeak" checked>
+                            <span>Auto-speak responses</span>
+                        </label>
+                    </div>
+
+                    <div class="setting-group">
+                        <label>
+                            <input type="checkbox" id="darkMode">
+                            <span>Dark Mode</span>
+                        </label>
+                    </div>
+
+                    <div class="setting-group">
+                        <label>
+                            <input type="checkbox" id="notifications" checked>
+                            <span>Show notifications</span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="notification" class="notification"></div>
+
+    <!-- Copy Feedback -->
+    <div id="copyFeedback" class="copy-feedback" style="display: none;">
+        <i class="fas fa-check"></i> Copied to clipboard
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
